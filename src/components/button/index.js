@@ -2,8 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './index.scss';
 
-const Button = ({ children, onClick, disabled, type }) => (
-	<button className={type} onClick={onClick} disabled={disabled}>
+const Button = ({
+	children,
+	onClick,
+	disabled,
+	type,
+}) => (
+	<button type="button" className={type} onClick={onClick} disabled={disabled}>
 		{ children }
 	</button>
 );

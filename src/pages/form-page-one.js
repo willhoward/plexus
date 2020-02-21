@@ -5,6 +5,6 @@ const FormPageOne = () => {
 	return (
 		<Page></Page>
 	);
-}
+};
 
 export default FormPageOne;

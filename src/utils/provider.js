@@ -12,7 +12,7 @@ const Provider = ({ children }) => {
 			{ children }
 		</Context.Provider>
 	);
-}
+};
 
 export default Provider;
 

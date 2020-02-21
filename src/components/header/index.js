@@ -23,5 +23,5 @@ const Header = ({ history }) => (
 export default withRouter(Header);
 
 Header.propTypes = {
-	history: PropTypes.object.isRequired,
+	history: PropTypes.shape.isRequired,
 };

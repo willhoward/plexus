@@ -17,12 +17,8 @@ button {
 		@include p($bold, $white);
 		background-color: $blue;
 
-		&:hover {
+		&:hover, &:focus {
 			background-color: darken($blue, 5%);
-		}
-
-		&:focus, &:active {
-			background-color: darken($blue, 10%);
 		}
 	}
 
@@ -31,12 +27,8 @@ button {
 		@include p($bold, $black);
 		background-color: $cream;
 
-		&:hover {
+		&:hover, &:focus {
 			background-color: darken($cream, 5%);
-		}
-		
-		&:focus, &:active {
-			background-color: darken($cream, 10%);
 		}
 	}
 }
