@@ -1,0 +1,32 @@
+.flex {
+	display: flex;
+
+	&.horizontal {
+		width: 100%;
+		height: auto;
+		flex-direction: row;
+	}
+
+	&.vertical {
+		width: auto;
+		height: 100%;
+		flex-direction: column;
+	}
+
+	.flex_item, .flex_equal, .flex_space {
+		min-width: 0;
+		min-height: 0;
+	}
+
+	.flex_item {
+		flex: 0 0 content;
+	}
+
+	.flex_equal {
+		flex: 1 0 0;
+	}
+
+	.flex_space {
+		flex: 1 1 auto;
+	}
+}
