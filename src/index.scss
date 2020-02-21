@@ -1,0 +1,53 @@
+@import './utils/variables';
+@import './utils/mixins';
+
+@font-face {
+  font-family: 'Sailec';
+  src: url('/fonts/sailec.woff2') format('woff2'),
+      url('/fonts/sailec.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Sailec';
+  src: url('/fonts/sailec-medium.woff2') format('woff2'),
+      url('/fonts/sailec-medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+* {
+  font-family: 'Sailec', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  vertical-align: top;
+}
+
+h1 {
+  @include h1($bold, $black);
+}
+
+h2 {
+  @include h2($bold, $black);
+}
+
+h6 {
+  @include h6($bold, $gray);
+}
+
+p {
+  @include p($normal, $black);
+
+  &.success, .success {
+    @include p($normal, $green);
+  }
+
+  &.error, .error {
+    @include p($normal, $red);
+  }
+
+  &.info, .info {
+    @include p($normal, $blue);
+  }
+}

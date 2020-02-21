@@ -1,0 +1,42 @@
+@import '../../utils/variables';
+
+.spacer {
+  width: auto;
+  height: auto;
+
+  &.vertical {
+    width: 100%;
+    min-width: $spacing-1;
+    display: block;
+
+    &.small {
+      height: $spacing-1;
+    }
+
+    &.medium {
+      height: $spacing-2;
+    }
+
+    &.large {
+      height: $spacing-4;
+    }
+  }
+
+  &.horizontal {
+    height: 100%;
+    min-height: $spacing-1;
+    display: inline-block;
+
+    &.small {
+      width: $spacing-1;
+    }
+
+    &.medium {
+      width: $spacing-2;
+    }
+
+    &.large {
+      width: $spacing-4;
+    }
+  }
+}

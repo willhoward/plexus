@@ -1,0 +1,42 @@
+@import '../../utils/variables';
+@import '../../utils/mixins';
+
+button {
+	width: 100%;
+	height: auto;
+	padding: $spacing-1;
+	border-radius: $border-radius-small;
+	white-space: nowrap;
+	@include transition(all);
+	outline: none;
+	cursor: pointer;
+	-webkit-appearance: none;
+
+	&.primary {
+		@include border($blue);
+		@include p($bold, $white);
+		background-color: $blue;
+
+		&:hover {
+			background-color: darken($blue, 5%);
+		}
+
+		&:focus, &:active {
+			background-color: darken($blue, 10%);
+		}
+	}
+
+	&.secondary {
+		@include border($gray);
+		@include p($bold, $black);
+		background-color: $cream;
+
+		&:hover {
+			background-color: darken($cream, 5%);
+		}
+		
+		&:focus, &:active {
+			background-color: darken($cream, 10%);
+		}
+	}
+}

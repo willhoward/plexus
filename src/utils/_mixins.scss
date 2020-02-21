@@ -1,0 +1,38 @@
+/* Transition mixins */
+@mixin transition($property) {
+  transition: 200ms $property linear;
+}
+
+/* Border mixins */
+@mixin border($color) {
+  border: 2px solid $color;
+}
+
+/* Font mixins */
+@mixin h1($weight, $color) {
+  font-size: 30px;
+  font-style: normal;
+  font-weight: $weight;
+  color: $color;
+}
+
+@mixin h2($weight, $color) {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: $weight;
+  color: $color;
+}
+
+@mixin h6($weight, $color) {
+  font-size: 12px;
+  font-style: normal;
+  font-weight: $weight;
+  color: $color;
+}
+
+@mixin p($weight, $color) {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: $weight;
+  color: $color;
+}

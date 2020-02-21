@@ -2,17 +2,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import Flex, { FlexItem, FlexEqual } from '../flex';
+import Button from '../button';
+import Spacer from '../spacer';
+import './index.scss';
 
 const Header = ({ history }) => (
 	<Flex className="header">
-		<FlexEqual />
+		<FlexEqual>
+			<Button onClick={() => history.push('/page-one')} type="secondary">Page One</Button>
+		</FlexEqual>
 		<FlexItem>
-			<p>Page One</p>
+			<Spacer direction="horizontal" size="medium" />
 		</FlexItem>
-		<FlexItem>
-			<p>Page Two</p>
-		</FlexItem>
-		<FlexEqual />
+		<FlexEqual>
+			<Button onClick={() => history.push('/page-two')} type="secondary">Page Two</Button>
+		</FlexEqual>
 	</Flex>
 );
 
