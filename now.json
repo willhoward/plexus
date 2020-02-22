@@ -1,0 +1,7 @@
+{
+  "name": "plexus",
+  "alias": "plexus.willhoward.co.uk",
+  "routes": [
+		{ "src": "/*", "dest": "index.html" }
+  ]
+}
