@@ -5,6 +5,8 @@ import Context from './context';
 const Provider = ({ children }) => {
 	const [storeType, updateStoreType] = useState('mall');
 	const [storeDetails, updateStoreDetails] = useState('');
+	const [firstName, updateFirstName] = useState('');
+	const [lastName, updateLastName] = useState('');
 
 	return (
 		<Context.Provider
@@ -13,6 +15,10 @@ const Provider = ({ children }) => {
 				updateStoreType: (v) => updateStoreType(v),
 				storeDetails,
 				updateStoreDetails: (v) => updateStoreDetails(v),
+				firstName,
+				updateFirstName: (v) => updateFirstName(v),
+				lastName,
+				updateLastName: (v) => updateLastName(v),
 			}}
 		>
 			{children}

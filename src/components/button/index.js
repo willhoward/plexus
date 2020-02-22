@@ -7,11 +7,10 @@ const Button = ({
 	type,
 	onClick,
 	disabled,
-	priority,
 }) => (
 	<button
 		type={type}
-		className={priority}
+		className="button"
 		onClick={onClick}
 		disabled={disabled}
 	>
@@ -26,7 +25,6 @@ Button.propTypes = {
 	type: PropTypes.string,
 	onClick: PropTypes.func,
 	disabled: PropTypes.bool,
-	priority: PropTypes.string,
 };
 
 Button.defaultProps = {
@@ -34,5 +32,4 @@ Button.defaultProps = {
 	type: 'button',
 	onClick: () => {},
 	disabled: false,
-	priority: 'primary',
 };

@@ -1,0 +1,82 @@
+@import '../../utils/variables';
+@import '../../utils/mixins';
+
+button.tab {
+	width: 100%;
+	height: auto;
+	padding: $spacing-1;
+	white-space: nowrap;
+	@include transition(all);
+	outline: none;
+	cursor: pointer;
+	-webkit-appearance: none;
+	text-align: left;
+	@include border($cream);
+	@include p($bold, $black);
+	background-color: $cream;
+
+	&:hover, &:focus, &.active {
+		@include border(darken($cream, 5%));
+		background-color: darken($cream, 5%);
+	}
+
+	&.horizontal {
+
+		&.first {
+			border-radius: $border-radius-small 0 0 $border-radius-small;
+		}
+
+		&.middle {
+			border-radius: 0;
+		}
+
+		&.last {
+			border-radius: 0 $border-radius-small $border-radius-small 0;
+		}
+
+		&.only {
+			border-radius: $border-radius-small;
+		}
+	}
+
+	&.vertical {
+
+		&.first {
+			border-radius: $border-radius-small $border-radius-small 0 0;
+		}
+
+		&.middle {
+			border-radius: 0;
+		}
+
+		&.last {
+			border-radius: 0 0 $border-radius-small $border-radius-small;
+		}
+
+		&.only {
+			border-radius: $border-radius-small;
+		}
+	}
+
+	&.text_left {
+		text-align: left;
+	}
+
+	&.text_center {
+		text-align: center;
+	}
+
+	&.text_right {
+		text-align: right;
+	}
+
+	&:disabled {
+		@include border($cream);
+		background-color: $cream;
+
+		&:hover, &:focus {
+			@include border($cream);
+			background-color: $cream;
+		}
+	}
+}

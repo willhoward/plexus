@@ -1,7 +1,7 @@
 @import '../../utils/variables';
 @import '../../utils/mixins';
 
-button {
+button.button {
 	width: 100%;
 	height: auto;
 	padding: $spacing-1;
@@ -11,24 +11,11 @@ button {
 	outline: none;
 	cursor: pointer;
 	-webkit-appearance: none;
+	@include border($blue);
+	@include p($bold, $white);
+	background-color: $blue;
 
-	&.primary {
-		@include border($blue);
-		@include p($bold, $white);
-		background-color: $blue;
-
-		&:hover, &:focus {
-			background-color: darken($blue, 5%);
-		}
-	}
-
-	&.secondary {
-		@include border($gray);
-		@include p($bold, $black);
-		background-color: $cream;
-
-		&:hover, &:focus {
-			background-color: darken($cream, 5%);
-		}
+	&:hover, &:focus {
+		background-color: darken($blue, 5%);
 	}
 }

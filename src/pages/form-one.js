@@ -17,7 +17,6 @@ const FormOne = ({ history }) => {
 		setValue,
 	} = useForm();
 	const {
-		updatePage,
 		storeType,
 		updateStoreType,
 		storeDetails,
@@ -38,7 +37,7 @@ const FormOne = ({ history }) => {
 	return (
 		<Page>
 			<form onSubmit={handleSubmit(onSubmit)}>
-				<Input label="Store type">
+				<Input label="Store type" required>
 					<select name="storeType" ref={register}>
 						<option value="mall">Mall</option>
 						<option value="metro">Metro</option>
@@ -49,16 +48,13 @@ const FormOne = ({ history }) => {
 				{ watch('storeType') === 'metro' && (
 					<>
 						<Spacer direction="vertical" size="medium" />
-						<Input label="Provide details">
+						<Input label="Provide details" required>
 							<input type="text" id="storeDetails" name="storeDetails" ref={register} />
 						</Input>
 					</>
 				)}
 				<Spacer direction="vertical" size="large" />
-				<Button
-					type="submit"
-					priority="primary"
-				>
+				<Button type="submit">
 					Continue
 				</Button>
 			</form>

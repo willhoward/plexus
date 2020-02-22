@@ -1,21 +1,44 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
-import Flex, { FlexItem, FlexEqual } from '../flex';
-import Button from '../button';
-import Spacer from '../spacer';
+import Flex, { FlexEqual } from '../flex';
+import Tab from '../tab';
 import './index.scss';
 
-const Header = ({ history }) => (
+const Header = ({ history, location }) => (
 	<Flex className="header">
 		<FlexEqual>
-			<Button type="button" onClick={() => history.push('/one')} priority="secondary">Page One</Button>
+			<Tab
+				direction="horizontal"
+				position="first"
+				textAlign="center"
+				onClick={() => history.push('/one')}
+				active={location.pathname === '/one'}
+			>
+				1
+			</Tab>
 		</FlexEqual>
-		<FlexItem>
-			<Spacer direction="horizontal" size="medium" />
-		</FlexItem>
 		<FlexEqual>
-			<Button type="button" onClick={() => history.push('/two')} priority="secondary">Page Two</Button>
+			<Tab
+				direction="horizontal"
+				position="middle"
+				textAlign="center"
+				active={location.pathname === '/two'}
+				disabled={location.pathname === '/one'}
+			>
+				2
+			</Tab>
+		</FlexEqual>
+		<FlexEqual>
+			<Tab
+				direction="horizontal"
+				position="last"
+				textAlign="center"
+				active={location.pathname === '/submit'}
+				disabled={location.pathname !== '/submit'}
+			>
+				3
+			</Tab>
 		</FlexEqual>
 	</Flex>
 );
@@ -24,4 +47,5 @@ export default withRouter(Header);
 
 Header.propTypes = {
 	history: PropTypes.object.isRequired,
+	location: PropTypes.object.isRequired,
 };
