@@ -73,6 +73,7 @@ button.tab {
 	&:disabled {
 		@include border($cream);
 		background-color: $cream;
+		cursor: default;
 
 		&:hover, &:focus {
 			@include border($cream);

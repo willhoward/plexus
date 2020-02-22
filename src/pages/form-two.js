@@ -26,6 +26,7 @@ const FormTwo = ({ history }) => {
 		updateFirstName,
 		lastName,
 		updateLastName,
+		updateFormTwoValid,
 	} = useContext(Context);
 
 	useEffect(() => {
@@ -90,11 +91,14 @@ const FormTwo = ({ history }) => {
 	const onSubmit = (data) => {
 		updateFirstName(data.firstName);
 		updateLastName(data.lastName);
+		updateFormTwoValid(true);
 		history.push('/submit');
 	};
 
 	return (
-		<Page>
+		<Page header>
+			<h1>User details</h1>
+			<Spacer direction="vertical" size="medium" />
 			<form onSubmit={handleSubmit(onSubmit)}>
 				<Input label="User lookup">
 					<input type="text" id="userLookup" name="userLookup" ref={register} onChange={lookup} />
@@ -116,23 +120,41 @@ const FormTwo = ({ history }) => {
 						<Spacer direction="vertical" size="medium" />
 					</>
 				)}
+				<Input label="First name" required>
+					<input type="text" id="firstName" name="firstName" ref={register({ required: true })} disabled />
+				</Input>
+				{ errors.firstName ? (
+					<>
+						<Spacer direction="vertical" size="small" />
+						<p className="error">A first name is required.</p>
+						<Spacer direction="vertical" size="small" />
+					</>
+				) : (
+					<Spacer direction="vertical" size="medium" />
+				)}
+				<Input label="Last name" required>
+					<input type="text" id="lastName" name="lastName" ref={register({ required: true })} disabled />
+				</Input>
+				{ errors.lastName ? (
+					<>
+						<Spacer direction="vertical" size="small" />
+						<p className="error">A last name is required.</p>
+						<Spacer direction="vertical" size="small" />
+					</>
+				) : (
+					<Spacer direction="vertical" size="large" />
+				)}
 				<Flex>
 					<FlexEqual>
-						<Input label="First name" required>
-							<input type="text" id="firstName" name="firstName" ref={register({ required: true })} disabled />
-						</Input>
+						<Button type="button" onClick={() => history.push('/one')}>Back</Button>
 					</FlexEqual>
 					<FlexItem>
-						<Spacer size="horizontal" direction="medium" />
+						<Spacer direction="horizontal" size="medium" />
 					</FlexItem>
 					<FlexEqual>
-						<Input label="Last name" required>
-							<input type="text" id="lastName" name="lastName" ref={register({ required: true })} disabled />
-						</Input>
+						<Button type="submit">Continue</Button>
 					</FlexEqual>
 				</Flex>
-				<Spacer direction="vertical" size="large" />
-				<Button type="submit">Continue</Button>
 			</form>
 		</Page>
 	);

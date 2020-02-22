@@ -21,6 +21,7 @@ const FormOne = ({ history }) => {
 		updateStoreType,
 		storeDetails,
 		updateStoreDetails,
+		updateFormOneValid,
 	} = useContext(Context);
 
 	useEffect(() => {
@@ -31,29 +32,47 @@ const FormOne = ({ history }) => {
 	const onSubmit = (data) => {
 		updateStoreType(data.storeType);
 		updateStoreDetails(data.storeDetails || '');
+		updateFormOneValid(true);
 		history.push('/two');
 	};
 
 	return (
-		<Page>
+		<Page header>
+			<h1>Store details</h1>
+			<Spacer direction="vertical" size="medium" />
 			<form onSubmit={handleSubmit(onSubmit)}>
 				<Input label="Store type" required>
-					<select name="storeType" ref={register}>
+					<select name="storeType" ref={register({ required: true })}>
+						<option value="">Select...</option>
 						<option value="mall">Mall</option>
 						<option value="metro">Metro</option>
 						<option value="arcade">Arcade</option>
 						<option value="centre">Centre</option>
 					</select>
 				</Input>
-				{ watch('storeType') === 'metro' && (
+				{ errors.storeType && (
 					<>
-						<Spacer direction="vertical" size="medium" />
-						<Input label="Provide details" required>
-							<input type="text" id="storeDetails" name="storeDetails" ref={register} />
-						</Input>
+						<Spacer direction="vertical" size="small" />
+						<p className="error">This field is required.</p>
+						<Spacer direction="vertical" size="small" />
 					</>
 				)}
-				<Spacer direction="vertical" size="large" />
+				<div className={watch('storeType') === 'metro' ? '' : 'hidden'}>
+					<Spacer direction="vertical" size="medium" />
+					<Input label="Provide details" required>
+						<input type="text" id="storeDetails" name="storeDetails" ref={register({ required: watch('storeType') === 'metro' })} />
+					</Input>
+				</div>
+				{ errors.storeDetails && (
+					<>
+						<Spacer direction="vertical" size="small" />
+						<p className="error">This field is required.</p>
+						<Spacer direction="vertical" size="small" />
+					</>
+				)}
+				{ !errors.storeType && !errors.storeDetails && (
+					<Spacer direction="vertical" size="large" />
+				)}
 				<Button type="submit">
 					Continue
 				</Button>

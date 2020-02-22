@@ -3,10 +3,13 @@ import PropTypes from 'prop-types';
 import Context from './context';
 
 const Provider = ({ children }) => {
-	const [storeType, updateStoreType] = useState('mall');
+	const [storeType, updateStoreType] = useState('');
 	const [storeDetails, updateStoreDetails] = useState('');
 	const [firstName, updateFirstName] = useState('');
 	const [lastName, updateLastName] = useState('');
+	const [formOneValid, updateFormOneValid] = useState(false);
+	const [formTwoValid, updateFormTwoValid] = useState(false);
+	const [formSubmitted, updateFormSubmitted] = useState(false);
 
 	return (
 		<Context.Provider
@@ -19,6 +22,12 @@ const Provider = ({ children }) => {
 				updateFirstName: (v) => updateFirstName(v),
 				lastName,
 				updateLastName: (v) => updateLastName(v),
+				formOneValid,
+				updateFormOneValid: (v) => updateFormOneValid(v),
+				formTwoValid,
+				updateFormTwoValid: (v) => updateFormTwoValid(v),
+				formSubmitted,
+				updateFormSubmitted: (v) => updateFormSubmitted(v),
 			}}
 		>
 			{children}

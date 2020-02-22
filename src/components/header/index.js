@@ -23,6 +23,7 @@ const Header = ({ history, location }) => (
 				direction="horizontal"
 				position="middle"
 				textAlign="center"
+				onClick={() => history.push('/two')}
 				active={location.pathname === '/two'}
 				disabled={location.pathname === '/one'}
 			>

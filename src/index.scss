@@ -51,3 +51,7 @@ p {
     @include p($normal, $blue);
   }
 }
+
+.hidden {
+	display: none;
+}
