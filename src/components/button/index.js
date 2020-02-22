@@ -4,11 +4,17 @@ import './index.scss';
 
 const Button = ({
 	children,
+	type,
 	onClick,
 	disabled,
-	type,
+	priority,
 }) => (
-	<button type="button" className={type} onClick={onClick} disabled={disabled}>
+	<button
+		type={type}
+		className={priority}
+		onClick={onClick}
+		disabled={disabled}
+	>
 		{ children }
 	</button>
 );
@@ -17,14 +23,16 @@ export default Button;
 
 Button.propTypes = {
 	children: PropTypes.node,
+	type: PropTypes.string,
 	onClick: PropTypes.func,
 	disabled: PropTypes.bool,
-	type: PropTypes.string,
+	priority: PropTypes.string,
 };
 
 Button.defaultProps = {
 	children: <></>,
+	type: 'button',
 	onClick: () => {},
 	disabled: false,
-	type: 'primary',
+	priority: 'primary',
 };

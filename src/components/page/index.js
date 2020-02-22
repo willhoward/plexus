@@ -5,9 +5,11 @@ import './index.scss';
 
 const Page = ({ children }) => (
 	<div className="page">
-		<div className="page_content">
+		<div className="page_inner">
 			<Header />
-			{ children }
+			<div className="inner_content">
+				{ children }
+			</div>
 		</div>
 	</div>
 );

@@ -1,0 +1,26 @@
+@import '../../utils/variables';
+@import '../../utils/mixins';
+
+input, select {
+  width: 100%;
+	height: $spacing-5;
+	padding: 0 $spacing-1;
+	@include border($cream);
+	border-radius: $border-radius-small;
+	@include p($normal, $black);
+	@include transition(border);
+	outline: none;
+	-webkit-appearance: none;
+
+	&::placeholder {
+		@include p($normal, $gray);
+	}
+
+	&:focus {
+		@include border($blue);
+	}
+
+	&:disabled {
+		background-color: $cream;
+	}
+}

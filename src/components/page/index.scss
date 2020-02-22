@@ -5,14 +5,22 @@
 	height: auto;
 	min-height: 100vh;
 	padding: $spacing-6 $spacing-2;
-	background-color: $cream;
+	background: linear-gradient(45deg, darken($blue, 5%) 0%, lighten($blue, 5%) 100%);
 
-	.page_content {
+	.page_inner {
 		width: 100%;
-		max-width: 600px;
+		max-width: 500px;
 		height: auto;
 		margin: 0 auto;
 		background-color: $white;
 		border-radius: $border-radius-large;
+		box-shadow: $box-shadow;
+		overflow: hidden;
+
+		.inner_content {
+			width: 100%;
+			height: auto;
+			padding: $spacing-2;
+		}
 	}
 }

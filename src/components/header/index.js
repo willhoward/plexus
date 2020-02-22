@@ -9,13 +9,13 @@ import './index.scss';
 const Header = ({ history }) => (
 	<Flex className="header">
 		<FlexEqual>
-			<Button onClick={() => history.push('/page-one')} type="secondary">Page One</Button>
+			<Button type="button" onClick={() => history.push('/one')} priority="secondary">Page One</Button>
 		</FlexEqual>
 		<FlexItem>
 			<Spacer direction="horizontal" size="medium" />
 		</FlexItem>
 		<FlexEqual>
-			<Button onClick={() => history.push('/page-two')} type="secondary">Page Two</Button>
+			<Button type="button" onClick={() => history.push('/two')} priority="secondary">Page Two</Button>
 		</FlexEqual>
 	</Flex>
 );
@@ -23,5 +23,5 @@ const Header = ({ history }) => (
 export default withRouter(Header);
 
 Header.propTypes = {
-	history: PropTypes.shape.isRequired,
+	history: PropTypes.object.isRequired,
 };

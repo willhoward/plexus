@@ -1,15 +1,15 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Provider from './provider';
-import FormPageOne from '../pages/form-page-one';
-import FormPageTwo from '../pages/form-page-two';
+import FormOne from '../pages/form-one';
+import FormTwo from '../pages/form-two';
 
 const Router = () => (
 	<BrowserRouter>
 		<Provider>
 			<Switch>
-				<Route exact path="/page-one" component={FormPageOne} />
-				<Route exact path="/page-two" component={FormPageTwo} />
+				<Route exact path="/one" component={FormOne} />
+				<Route exact path="/two" component={FormTwo} />
 			</Switch>
 		</Provider>
 	</BrowserRouter>

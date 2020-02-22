@@ -1,6 +1,6 @@
 /* Transition mixins */
 @mixin transition($property) {
-  transition: 200ms $property linear;
+  transition: 100ms $property linear;
 }
 
 /* Border mixins */
