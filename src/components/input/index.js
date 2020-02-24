@@ -5,10 +5,10 @@ import './index.scss';
 
 const Input = ({ children, label, required }) => (
 	<div>
-		<p>
+		<p data-testid="label">
 			{ label }
 			{' '}
-			{required && (<sup><span className="error">*</span></sup>)}
+			{required && (<sup data-testid="required"><span className="error">*</span></sup>)}
 		</p>
 		<Spacer size="small" direction="vertical" />
 		{ children }

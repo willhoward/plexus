@@ -2,8 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './index.scss';
 
-const Flex = ({ children, direction, className }) => (
-	<div className={`flex ${direction} ${className}`}>
+const Flex = ({
+	children,
+	direction,
+	className,
+	...props
+}) => (
+	<div className={`flex ${direction} ${className}`} {...props}>
 		{ children }
 	</div>
 );

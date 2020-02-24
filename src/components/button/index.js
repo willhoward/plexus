@@ -13,6 +13,7 @@ const Button = ({
 		className="button"
 		onClick={onClick}
 		disabled={disabled}
+		data-testid="button"
 	>
 		{ children }
 	</button>

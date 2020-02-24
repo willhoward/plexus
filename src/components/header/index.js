@@ -6,7 +6,7 @@ import Tab from '../tab';
 import './index.scss';
 
 const Header = ({ history, location }) => (
-	<Flex className="header">
+	<Flex className="header" data-testid="header">
 		<FlexEqual>
 			<Tab
 				direction="horizontal"
@@ -14,6 +14,7 @@ const Header = ({ history, location }) => (
 				textAlign="center"
 				onClick={() => history.push('/one')}
 				active={location.pathname === '/one'}
+				data-testid="tabOne"
 			>
 				1
 			</Tab>
@@ -26,6 +27,7 @@ const Header = ({ history, location }) => (
 				onClick={() => history.push('/two')}
 				active={location.pathname === '/two'}
 				disabled={location.pathname === '/one'}
+				data-testid="tabTwo"
 			>
 				2
 			</Tab>
@@ -37,6 +39,7 @@ const Header = ({ history, location }) => (
 				textAlign="center"
 				active={location.pathname === '/submit'}
 				disabled={location.pathname !== '/submit'}
+				data-testid="tabThree"
 			>
 				3
 			</Tab>

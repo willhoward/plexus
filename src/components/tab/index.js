@@ -10,6 +10,7 @@ const Tab = ({
 	disabled,
 	textAlign,
 	active,
+	...props
 }) => (
 	<button
 		type="button"
@@ -18,6 +19,7 @@ const Tab = ({
 		${active ? 'active' : ''}`}
 		onClick={onClick}
 		disabled={disabled}
+		{...props}
 	>
 		{ children }
 	</button>
