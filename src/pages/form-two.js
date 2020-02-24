@@ -10,6 +10,7 @@ import Flex, { FlexItem, FlexEqual } from '../components/flex';
 import Spacer from '../components/spacer';
 import Button from '../components/button';
 import Tab from '../components/tab';
+import URLs from '../utils/urls.json';
 
 const FormTwo = ({ history }) => {
 	const {
@@ -49,7 +50,7 @@ const FormTwo = ({ history }) => {
 		const term = e.target.value;
 		try {
 			if (!names.length) {
-				const results = await Axios.get('https://randomuser.me/api/?results=50&nat=au&exc=login');
+				const results = await Axios.get(URLs.lookupUser);
 				const namesArray = results.data.results.map((result) => `${result.name.first} ${result.name.last}`);
 				setHighlightedNames(namesArray, term);
 				updateNames(namesArray);

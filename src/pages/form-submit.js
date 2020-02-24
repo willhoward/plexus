@@ -1,11 +1,13 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
+import Axios from 'axios';
 import Context from '../utils/context';
 import Flex, { FlexEqual, FlexItem } from '../components/flex';
 import Page from '../components/page';
 import Button from '../components/button';
 import Spacer from '../components/spacer';
+import URLs from '../utils/urls.json';
 
 const FormSubmit = ({ history }) => {
 	const {
@@ -16,7 +18,19 @@ const FormSubmit = ({ history }) => {
 		updateFormSubmitted,
 	} = useContext(Context);
 
-	const submitForm = () => {
+	const submitForm = async () => {
+		try {
+			const response = await Axios.post(URLs.submitForm, {
+				storeType,
+				storeDetails,
+				firstName,
+				lastName,
+			});
+
+			console.log('Form submission response: ', response);
+		} catch (error) {
+			console.log(error);
+		}
 		updateFormSubmitted(true);
 		history.push('/submitted');
 	};

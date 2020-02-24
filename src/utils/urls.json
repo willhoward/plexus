@@ -1,0 +1,4 @@
+{
+	"lookupUser": "https://randomuser.me/api/?results=50&nat=au&exc=login",
+	"submitForm": "https://webhook.site/4bf7a466-3716-4e93-8f07-0f5f50df0cc6"
+}

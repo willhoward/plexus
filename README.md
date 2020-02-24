@@ -17,3 +17,7 @@ This app is deployed on [Now](https://zeit.co/home). Provided you have the [Now 
 ## Architecture
 
 In order to satisfy the constraints of having multiple form fields retain information about their state, it made sense to me to implement React's Context API as a single source of truth for the app. I prefer using Context over Redux for applications of this size because of the enormous reduction in boilerplate required. Once validation of all the fields on a page is successful, this is stored in the context store and becomes available at router level, meaning that the router can direct users back to the first page of the form if they attempt to access the second page by URL without completing the first part.
+
+## Future Improvements
+
+It would be nice to have some kind of global error handling to report errors back to the user on network request failures rather than just console logging them. I've also had problems with `randomuser.me` going down sporadically and of course, it would be good to increase test coverage.
