@@ -20,12 +20,21 @@ const FormSubmit = ({ history }) => {
 
 	const submitForm = async () => {
 		try {
-			const response = await Axios.post(URLs.submitForm, {
+			const body = {
 				storeType,
 				storeDetails,
 				firstName,
 				lastName,
-			});
+			};
+			const options = {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				data: JSON.stringify(body),
+				url: URLs.submitForm,
+			};
+			const response = await Axios(options);
 
 			console.log('Form submission response: ', response);
 		} catch (error) {
