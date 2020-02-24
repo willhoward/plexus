@@ -1,6 +1,6 @@
 # Plexus Technical Test
 
-This project was created with, the documentation for which is [here](https://github.com/facebook/create-react-app).
+This project was created with Create React App, the documentation for which is [here](https://github.com/facebook/create-react-app).
 
 ## Getting Started
 
